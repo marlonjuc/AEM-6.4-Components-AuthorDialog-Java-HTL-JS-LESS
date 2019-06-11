@@ -1,0 +1,20 @@
+<div class="responsive-image-container component-row ${properties.dropTexture} ${properties.textureStyle}">
+    <div data-sly-test="${wcmmode.edit && !properties.imageDesktop}" class="author-edit-bar">
+        ${component.title} - ${'Click here to edit' @ i18n}
+    </div>
+    <!-- Optimized Images -->
+    <sly data-sly-use.imageHelper="${'edu.demo.demo_web.core.utils.OptimizedImageHelper' @ imageProperty=properties.imageDesktop}"/>
+    <div class="image-data" data-src-path="${imageHelper.srcPath}" data-sizes="320,768,1024,1200" data-widths="768,1024,1200,1440"></div>
+    <sly data-sly-test="${properties.imageMobile}">
+        <sly data-sly-use.imageHelper="${'edu.demo.demo_web.core.utils.OptimizedImageHelper' @ imageProperty=properties.imageMobile}"/>
+        <div class="image-data" data-src-path="${imageHelper.srcPath}" data-sizes="320" data-widths="768"></div>
+    </sly>
+
+    <sly data-sly-use.linkHelper="${'edu.demo.demo_web.core.utils.LinkHelper' @ linkText=properties.linkUrl}"/>
+    <a data-sly-unwrap="${!properties.linkUrl}" href="${linkHelper.formattedLink}" data-linkLoc="${component.title}"
+        target="${properties.linkTarget}">
+        <div class="image-container">
+            <img class="responsive-img" src="" alt="${properties.altText || true}" />
+        </div>
+    </a>
+</div>

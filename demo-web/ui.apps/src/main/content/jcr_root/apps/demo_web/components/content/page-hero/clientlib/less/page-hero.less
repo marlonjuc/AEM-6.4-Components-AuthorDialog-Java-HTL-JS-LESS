@@ -1,0 +1,101 @@
+.page-hero {
+    .hero-container {
+        margin-bottom: 24px;
+        position: relative;
+        &.no-bottom-margin {
+            margin-bottom: 0;
+        }
+        &.show-gradient:after {
+            @media @tablet {
+                content: '';
+                background-blend-mode: multiply;
+                height: 100%;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 100%;
+                .linear-gradient-multi(~'to right, rgba(34,34,34,0.5) 0%, rgba(34,34,34,0.4) 25%, rgba(34,34,34,0.1) 50%, rgba(34,34,34,0) 100%');
+                //.linear-gradient-ie(right, rgba(34,34,34,0.5), rgba(34,34,34,0));
+            }
+        }
+        .hero-background-container {
+            background-position: top center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            min-height: 200px;
+            @media @tablet {
+                min-height: 380px;
+            }
+        }
+        .hero-info-box {
+            width: 100%;
+            @media @tablet {
+                margin-top: 0;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+            }
+            .hero-content {
+                background-color: @black-color-1;
+                padding-bottom: 26px;
+                padding-left: 12px;
+                padding-right: 89px;
+                padding-top: 18px;
+                @media @tablet {
+                    margin-left: 15px;
+                    background-color: transparent;
+                    margin-right: 110px;
+                    padding-bottom: 20px;
+                    padding-left: 0;
+                    padding-right: 0;
+                    padding-top: 140px;
+                    width: 50%;
+                }
+                @media @desktop {
+                    width: 40%;
+                    margin-left: 78px;
+                }
+                h1 {
+                    p {
+                        color: @white-color;
+                        font-family: 'Poppins', sans-serif;
+                        font-size: 32px;
+                        font-weight: bold;
+                        line-height: 34px;
+                        margin: 0;
+                        @media @tablet {
+                            font-size: 42px;
+                            line-height: 44px;
+                        }
+                        span {
+                            &.font-color-yellow {
+                                font-size: 20px; 
+                                line-height: 22px;
+                                display: block;
+
+                                @media @tablet {
+                                    font-size: 24px;
+                                    line-height: 32px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .vertical-line {
+            display: none;
+            @media @desktop {
+                background-color: @grey-color-3;
+                display: inline-block;
+                height: 100%;
+                margin-left: 43px;
+                position: absolute;
+                top: 165px;
+                width: 3px;
+                z-index: 1;
+            }
+        }
+    }
+}

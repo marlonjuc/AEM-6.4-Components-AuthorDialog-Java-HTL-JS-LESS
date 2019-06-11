@@ -1,0 +1,84 @@
+<sly data-sly-use.componentModel="${'edu.demo.demo_web.core.models.MultiColumn'}"/>
+<div data-sly-test="${wcmmode.edit}" class="author-edit-bar">
+    ${component.title} - ${'Click here to edit' @ i18n}
+</div>
+<div class="multiColumnWrapper component-row ${properties.columnOption} ${properties.topCenterSection ? ' has-top-center-section' : ''}
+        ${properties.noBottomMargin} ${properties.reducedColPadding}" >
+    <sly data-sly-test="${properties.topCenterSection}" class="aem-Grid aem-Grid--default--12 top-center-wrapper">
+        <div class="top-center-section" data-sly-resource="${'content-top-center' @ resourceType='wcm/foundation/components/parsys'}"></div>
+    </sly>
+    <!-- 1 (100%) -->
+    <div data-sly-test="${properties.columnOption == 'col-100'}" class="aem-Grid aem-Grid--default--12 aem-Grid--tablet--6 aem-Grid--phone--1">
+        <div class="${properties.backgroundColorTab1} aem-GridColumn aem-GridColumn--default--12 ${componentModel.additionalColumnClasses}"
+                style="${componentModel.inlineStylesCol1 @ context='styleString'}">
+            <div class="parsys-container" data-sly-resource="${'content-col-1' @ resourceType='wcm/foundation/components/parsys'}"></div>
+        </div>
+    </div>
+    <!-- 2 (50%/50%) -->
+    <div data-sly-test="${properties.columnOption == 'col-50'}" class="aem-Grid aem-Grid--default--12 aem-Grid--tablet--6 aem-Grid--phone--1 ${properties.verticallyCentered} ${properties.reverseColumnsMobile}">
+        <div class="${properties.backgroundColorTab1} aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--tablet--3 aem-GridColumn--phone--1 ${properties.showDividerLines}  ${componentModel.additionalColumnClasses} ${properties.noSpaceBetweenColumns}"
+                style="${componentModel.inlineStylesCol1 @ context='styleString'}">
+            <div class="parsys-container" data-sly-resource="${'content-col-1' @ resourceType='wcm/foundation/components/parsys'}"></div>
+        </div>
+        <div class="${properties.backgroundColorTab2} aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--tablet--3 aem-GridColumn--phone--1 ${componentModel.additionalColumnClasses} ${properties.noSpaceBetweenColumns}"
+                style="${componentModel.inlineStylesCol2 @ context='styleString'}">
+            <div class="parsys-container" data-sly-resource="${'content-col-2' @ resourceType='wcm/foundation/components/parsys'}"></div>
+        </div>
+    </div>
+    <!-- 2 (33%/67%) -->
+    <div data-sly-test="${properties.columnOption == 'col-33-67'}" class="aem-Grid aem-Grid--default--12 aem-Grid--tablet--6 aem-Grid--phone--1 ${properties.verticallyCentered} ${properties.reverseColumnsMobile}">
+        <div class="${properties.backgroundColorTab1} aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--tablet--2 aem-GridColumn--phone--1 ${properties.showDividerLines} ${componentModel.additionalColumnClasses} ${properties.noSpaceBetweenColumns}"
+                style="${componentModel.inlineStylesCol1 @ context='styleString'}">
+            <div class="parsys-container" data-sly-resource="${'content-col-1' @ resourceType='wcm/foundation/components/parsys'}"></div>
+        </div>
+        <div class="${properties.backgroundColorTab2} aem-GridColumn aem-GridColumn--default--8 aem-GridColumn--tablet--4 aem-GridColumn--phone--1 ${componentModel.additionalColumnClasses} ${properties.noSpaceBetweenColumns}"
+                style="${componentModel.inlineStylesCol2 @ context='styleString'}">
+            <div class="parsys-container" data-sly-resource="${'content-col-2' @ resourceType='wcm/foundation/components/parsys'}"></div>
+        </div>
+    </div>
+    <!-- 2 (67%/33%) -->
+    <div data-sly-test="${properties.columnOption == 'col-67-33'}" class="aem-Grid aem-Grid--default--12 aem-Grid--tablet--6 aem-Grid--phone--1 ${properties.verticallyCentered} ${properties.reverseColumnsMobile}">
+        <div  class="${properties.backgroundColorTab1} aem-GridColumn aem-GridColumn--default--8 aem-GridColumn--tablet--4 aem-GridColumn--phone--1 ${properties.showDividerLines}  ${componentModel.additionalColumnClasses} ${properties.noSpaceBetweenColumns}"
+                style="${componentModel.inlineStylesCol1 @ context='styleString'}">
+            <div class="parsys-container" data-sly-resource="${'content-col-1' @ resourceType='wcm/foundation/components/parsys'}"></div>
+        </div>
+        <div  class="${properties.backgroundColorTab2} aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--tablet--2 aem-GridColumn--phone--1 ${componentModel.additionalColumnClasses} ${properties.noSpaceBetweenColumns}"
+                style="${componentModel.inlineStylesCol2 @ context='styleString'}">
+            <div class="parsys-container" data-sly-resource="${'content-col-2' @ resourceType='wcm/foundation/components/parsys'}"></div>
+        </div>
+    </div>
+    <!-- 3 (33%/33%/33%) -->
+    <div data-sly-test="${properties.columnOption == 'col-33'}" class="aem-Grid aem-Grid--default--12 aem-Grid--tablet--6 aem-Grid--phone--1 ${properties.verticallyCentered} ${properties.reverseColumnsMobile}">
+        <div class="${properties.backgroundColorTab1} aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--tablet--2 aem-GridColumn--phone--1 ${properties.showDividerLines} ${componentModel.additionalColumnClasses} ${properties.noSpaceBetweenColumns}"
+                style="${componentModel.inlineStylesCol1 @ context='styleString'}">
+            <div class="parsys-container" data-sly-resource="${'content-col-1' @ resourceType='wcm/foundation/components/parsys'}"></div>
+        </div>
+        <div class="${properties.backgroundColorTab2} aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--tablet--2 aem-GridColumn--phone--1 ${properties.showDividerLines} ${componentModel.additionalColumnClasses} ${properties.noSpaceBetweenColumns}"
+                style="${componentModel.inlineStylesCol2 @ context='styleString'}">
+            <div class="parsys-container" data-sly-resource="${'content-col-2' @ resourceType='wcm/foundation/components/parsys'}"></div>
+        </div>
+        <div class="${properties.backgroundColorTab3} aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--tablet--2 aem-GridColumn--phone--1  ${componentModel.additionalColumnClasses} ${properties.noSpaceBetweenColumns}"
+                style="${componentModel.inlineStylesCol3 @ context='styleString'}">
+            <div class="parsys-container" data-sly-resource="${'content-col-3' @ resourceType='wcm/foundation/components/parsys'}"></div>
+        </div>
+    </div>
+    <!-- 4 (25%/25%/25%/25%) -->
+    <div data-sly-test="${properties.columnOption == 'col-25'}" class="aem-Grid aem-Grid--default--12 aem-Grid--tablet--4 aem-Grid--phone--1 ${properties.verticallyCentered} ${properties.reverseColumnsMobile}">
+        <div class="${properties.backgroundColorTab1} aem-GridColumn aem-GridColumn--default--3 aem-GridColumn--tablet--2 aem-GridColumn--phone--1 ${properties.showDividerLines} ${componentModel.additionalColumnClasses} ${properties.noSpaceBetweenColumns}"
+                style="${componentModel.inlineStylesCol1 @ context='styleString'}">
+            <div class="parsys-container" data-sly-resource="${'content-col-1' @ resourceType='wcm/foundation/components/parsys'}"></div>
+        </div>
+        <div class="${properties.backgroundColorTab2} aem-GridColumn aem-GridColumn--default--3 aem-GridColumn--tablet--2 aem-GridColumn--phone--1 ${properties.showDividerLines} ${componentModel.additionalColumnClasses} ${properties.noSpaceBetweenColumns}"
+                style="${componentModel.inlineStylesCol2 @ context='styleString'}">
+            <div class="parsys-container" data-sly-resource="${'content-col-2' @ resourceType='wcm/foundation/components/parsys'}"></div>
+        </div>
+        <div class="${properties.backgroundColorTab3} aem-GridColumn aem-GridColumn--default--3 aem-GridColumn--tablet--2 aem-GridColumn--phone--1 ${properties.showDividerLines} ${componentModel.additionalColumnClasses} ${properties.noSpaceBetweenColumns}"
+                style="${componentModel.inlineStylesCol3 @ context='styleString'}">
+            <div class="parsys-container parsys-container-no-padding" data-sly-resource="${'content-col-3' @ resourceType='wcm/foundation/components/parsys'}"></div>
+        </div>
+        <div class="${properties.backgroundColorTab4} aem-GridColumn aem-GridColumn--default--3 aem-GridColumn--tablet--2 aem-GridColumn--phone--1 ${componentModel.additionalColumnClasses} ${properties.noSpaceBetweenColumns}"
+                style="${componentModel.inlineStylesCol4 @ context='styleString'}">
+            <div class="parsys-container parsys-container-no-padding" data-sly-resource="${'content-col-4' @ resourceType='wcm/foundation/components/parsys'}"></div>
+        </div>
+    </div>
+</div>

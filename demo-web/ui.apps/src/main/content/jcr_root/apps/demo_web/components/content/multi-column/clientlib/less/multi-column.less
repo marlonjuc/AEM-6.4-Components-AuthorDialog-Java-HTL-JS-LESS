@@ -1,0 +1,142 @@
+@desktop-width-operand: @grid-gutter-desktop-width + 140;
+@tablet-width-operand: @grid-gutter-width + 60;
+
+.multi-column {
+    .multiColumnWrapper {
+        padding: 0;
+        position: relative;
+        .top-center-section {
+            height: auto;
+            padding-bottom: 10px;
+            @media @tablet {
+                padding: 80px 0 50px 0;
+                width: calc(~'100% - @{tablet-width-operand}');
+                position: absolute;
+                left: @grid-gutter-width/2 + 30;
+            }
+            @media @desktop {
+                width: calc(~'100% - @{desktop-width-operand}');
+                max-width: 1078px;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+            }
+            .video-player {
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+        &.has-top-center-section {
+            .backgroundPadding {
+                @media @tablet {
+                    padding-top: 0px;
+                }
+            }
+        }
+        >.aem-Grid {
+            @media @tablet {
+                .flex ();
+                .flex-wrap (wrap);
+                overflow-y: hidden;
+                &::before, &::after {
+                    content: normal;
+                }
+            }
+            &.vertically-centered {
+                @media @tablet {
+                    .flex-align-items (center);
+                }
+            }
+            &.reverse-columns-mobile {
+                .flex ();
+                .flex-direction (column-reverse);
+                @media @tablet {
+                    .flex-direction (initial);
+                }
+                @media @ie {
+                    .flex-direction (row);
+                }
+                .aem-GridColumn {
+                    .parsys-container {
+                        .responsive-image {
+                             @media @mobile {
+                                margin-bottom: 0;
+                            }
+                        }
+                        .title {
+                             @media @mobile {
+                                padding-top: 32px;
+                            }
+                        }
+                    }
+                }
+                .backgroundPadding {
+                    @media @mobile {
+                        margin-bottom: 0;
+                    }
+                }
+                .backgroundPadding, .backgroundPaddingAdjacent {
+                    @media @mobile {
+                        padding-top: 0;
+                    }
+                }
+            }
+            .aem-GridColumn {
+                &.divider-line {
+                     @media @tablet {
+                        position: relative;
+                        &:after {
+                            background-color: @grey-color-3; 
+                            bottom: 30px; 
+                            content: '';
+                            height: 100%;
+                            position: absolute;
+                            right: 0;
+                            width: 2px;
+                        }
+                    }
+                }
+                &.backgroundPadding + .backgroundPadding {
+                    @media @mobile {
+                        margin-top: 0;
+                    }
+                }
+                &.no-space-between-columns {
+                    .text {
+                        .cmp-text {
+                            @media @mobile {
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                    .item-list {
+                        margin-bottom: 0;
+                        @media @tablet {
+                            margin-bottom: 40px;
+                        }
+                    }
+                }
+            }
+        }
+        &.no-bottom-margin{
+            .backgroundPadding {
+                margin-bottom: 0;
+            }
+        }
+        &.reduced-col-padding {
+            >.aem-Grid {
+                >.aem-GridColumn {
+                    @media @desktop {
+                        &:not(:first-child) {
+                            padding-left: @grid-gutter-desktop-width/3;
+                        }
+                        &:not(:last-child) {
+                            padding-right: @grid-gutter-desktop-width/3;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

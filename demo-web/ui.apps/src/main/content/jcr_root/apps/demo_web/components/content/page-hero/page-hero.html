@@ -1,0 +1,17 @@
+<sly data-sly-use.heroImageModel="edu.demo.demo_web.core.models.HeroImageModel" />
+<div data-sly-test="${wcmmode.edit && !heroImageModel.heroImageSrc}" class="author-edit-bar">
+    ${component.title} - ${'Click here to edit' @ i18n}
+</div>
+<div class="hero-container component-row  ${properties.noBottomMargin}${properties.title ? ' show-gradient' : ''}">
+    <div class="hero-background-container" style="background-image: url('${heroImageModel.heroImageSrc @ context='uri'}');"></div>
+    <sly data-sly-test="${properties.title}">
+        <div class="hero-info-box">
+            <div class="hero-content">
+                <h1>${properties.title || '&nbsp;' @ context='html'}</h1>
+            </div>
+        </div>
+    </sly>
+    <sly data-sly-test="${properties.verticalLine}">
+        <div class="vertical-line"></div>
+    </sly>
+</div>

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Multi Column Container"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs">
+                <items jcr:primaryType="nt:unstructured">
+                    <basic
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Layout"
+                        sling:resourceType="granite/ui/components/foundation/section">
+                        <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <columnOption
+                                        jcr:primaryType="cq:Widget"
+                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        fieldLabel="Columns Options"
+                                        name="./columnOption">
+                                        <items jcr:primaryType="cq:WidgetCollection">
+                                            <col-100
+                                                jcr:primaryType="nt:unstructured"
+                                                text="1 (100%)"
+                                                value="col-100"/>
+                                            <col-50
+                                                jcr:primaryType="nt:unstructured"
+                                                text="2 (50%/50%)"
+                                                value="col-50"/>
+                                            <col-33-67
+                                                jcr:primaryType="nt:unstructured"
+                                                text="2 (33%/67%)"
+                                                value="col-33-67"/>
+                                            <col-67-33
+                                                jcr:primaryType="nt:unstructured"
+                                                text="2 (67%/33%)"
+                                                value="col-67-33"/>
+                                            <col-33
+                                                jcr:primaryType="nt:unstructured"
+                                                text="3 (33%/33%/33%)"
+                                                value="col-33"/>
+                                            <col-25
+                                                jcr:primaryType="nt:unstructured"
+                                                text="4 (25%/25%/25%/25%))"
+                                                value="col-25"/>
+                                        </items>
+                                    </columnOption>
+                                    <topCenterSection
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                        text="Show Top Center Section"
+                                        fieldDescription="Check this box to enable top center section."
+                                        value="{Boolean}true"
+                                        name="./topCenterSection"/>
+                                    <reducedColPadding
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                        text="Reduced Desktop Padding"
+                                        value="reduced-col-padding"
+                                        name="./reducedColPadding"/>
+                                    <noBottomMargin
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                        text="Remove Bottom Margin"
+                                        fieldDescription="Check this box if the component should not have bottom margin at tablet/desktop size"
+                                        value="no-bottom-margin"
+                                        name="./noBottomMargin"/>
+                                    <noSpaceBetweenColumns
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                        text="Remove Space Between Columns on Mobile View"
+                                        fieldDescription="Check this box if the columns should not have bottom margin at mobile size"
+                                        value="no-space-between-columns"
+                                        name="./noSpaceBetweenColumns"/>
+                                    <verticallyCentered
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                        name="./verticallyCentered"
+                                        text="Vertically Center Tablet/Desktop Content"
+                                        value="vertically-centered"/>
+                                    <showDividerLines
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                        name="./showDividerLines"
+                                        text="Show Divider Lines"
+                                        value="divider-line"/>
+                                    <reverseColumnsMobile
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                        text="Reverse the columns wrapping on Mobile View"
+                                        fieldDescription="Check this box if need to reverse the columns wrapping on Mobile View"
+                                        value="reverse-columns-mobile"
+                                        name="./reverseColumnsMobile"/>
+                                </items>
+                            </column>
+                        </items>
+                    </basic>
+                    <advanced
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Styles"
+                        sling:resourceType="granite/ui/components/foundation/section">
+                        <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <backgroundColorTab1
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        class="/content/devry_edu:background-color"
+                                        fieldLabel="Background Color Tab 1"
+                                        name="./backgroundColorTab1">
+                                        <datasource
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="/apps/dvu_marketing/components/datasource"/>
+                                    </backgroundColorTab1>
+                                    <backgroundColorTab2
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        class="/content/devry_edu:background-color"
+                                        fieldLabel="Background Color Tab 2"
+                                        name="./backgroundColorTab2">
+                                        <datasource
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="/apps/dvu_marketing/components/datasource"/>
+                                    </backgroundColorTab2>
+                                    <backgroundColorTab3
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        class="/content/devry_edu:background-color"
+                                        fieldLabel="Background Color Tab 3"
+                                        name="./backgroundColorTab3">
+                                        <datasource
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="/apps/dvu_marketing/components/datasource"/>
+                                    </backgroundColorTab3>
+                                    <backgroundColorTab4
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        class="/content/devry_edu:background-color"
+                                        fieldLabel="Background Color Tab 4"
+                                        name="./backgroundColorTab4">
+                                        <datasource
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="/apps/dvu_marketing/components/datasource"/>
+                                    </backgroundColorTab4>
+                                </items>
+                            </column>
+                        </items>
+                    </advanced>
+                    <overrides
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Overrides (Advanced)"
+                        sling:resourceType="granite/ui/components/foundation/section">
+                        <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <topPaddingCol1
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Padding Top - Column 1"
+                                        fieldDescription="Top padding in px. Examples are '15px', or '0' when top padding should not be present."
+                                        name="./topPaddingCol1"/>
+                                    <topPaddingCol2
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Padding Top - Column 2"
+                                        fieldDescription="Top padding in px. Examples are '15px', or '0' when top padding should not be present."
+                                        name="./topPaddingCol2"/>
+                                    <topPaddingCol3
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Padding Top - Column 3"
+                                        fieldDescription="Top padding in px. Examples are '15px', or '0' when top padding should not be present."
+                                        name="./topPaddingCol3"/>
+                                    <topPaddingCol4
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Padding Top - Column 4"
+                                        fieldDescription="Top padding in px. Examples are '15px', or '0' when top padding should not be present."
+                                        name="./topPaddingCol4"/>
+                                </items>
+                            </column>
+                        </items>
+                    </overrides>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

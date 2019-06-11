@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Responsive Image"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    helppath="en/cq/current/wcm/default_components.html#Carousel"
+    extraClientlibs="dvu_marketing.author">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/tabs"/>
+        <items
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+            <images
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Responsive Image"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <imageDesktop
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                fieldLabel="Image"
+                                required="{Boolean}true"
+                                mimeTypes="image"
+                                name="./imageDesktop"
+                                rootPath="/content/dam/devry_edu"/>
+                            <enable
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                text="Optional Mobile Image"
+                                fieldDescription="Check this box to show/hide optional mobile image field."
+                                id="enable"
+                                value="true"
+                                name="./enable"
+                                class="cq-dialog-checkbox-showhide"
+                                cq-dialog-checkbox-showhide-target=".button-option-enable-showhide-target"/>
+                            <deleteEnable
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                name="./enable@Delete"
+                                value="true"/>
+                            <showHideContainer
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hidden button-option-enable-showhide-target"
+                                showhidetargetvalue="true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <imageMobile
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                        fieldLabel="Image Mobile"
+                                        mimeTypes="image"
+                                        name="./imageMobile"
+                                        rootPath="/content/dam/devry_edu"/>
+                                </items>
+                            </showHideContainer>
+                            <altText
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Alt Text Image"
+                                name="./altText"/>
+                            <link
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                name="./items">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <linkUrl
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                        fieldLabel="Link Url"
+                                        name="./linkUrl"/>
+                                    <linkTarget
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                        name="./linkTarget"
+                                        text="Open in new window"
+                                        value="_blank"/>
+                                </items>
+                            </link>
+                            <dropTexture
+                                jcr:primaryType="cq:Widget"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldLabel="Drop Texture"
+                                name="./dropTexture">
+                                <items jcr:primaryType="cq:WidgetCollection">
+                                    <none
+                                        jcr:primaryType="nt:unstructured"
+                                        text="None"
+                                        value=""/>
+                                    <shadow
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Shadow"
+                                        value="drop-shadow"/>
+                                    <left
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Left"
+                                        value="drop-left"/>
+                                    <right
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Right"
+                                        value="drop-right"/>
+                                </items>
+                            </dropTexture>
+                            <textureStyle
+                               jcr:primaryType="cq:Widget"
+                               sling:resourceType="granite/ui/components/foundation/form/select"
+                               fieldLabel="Texture Style"
+                               name="./textureStyle">
+                               <items jcr:primaryType="cq:WidgetCollection">
+                                    <none
+                                       jcr:primaryType="nt:unstructured"
+                                       text="None"
+                                       value=""/>
+                                   <shieldBlue
+                                       jcr:primaryType="nt:unstructured"
+                                       text="Shield Blue"
+                                       value="shield-blue"/>
+                                   <shieldLightBlue
+                                       jcr:primaryType="nt:unstructured"
+                                       text="Shield Light Blue"
+                                       value="shield-light-blue"/>
+                                   <shieldYellow
+                                       jcr:primaryType="nt:unstructured"
+                                       text="Shield Yellow"
+                                       value="shield-yellow"/>
+                                   <shieldGrey
+                                       jcr:primaryType="nt:unstructured"
+                                       text="Shield Grey"
+                                       value="shield-grey"/>
+                                   <concreteGrey
+                                       jcr:primaryType="nt:unstructured"
+                                       text="Concrete Grey"
+                                       value="concrete-grey"/>
+                               </items>
+                           </textureStyle>
+                        </items>
+                    </columns>
+                </items>
+            </images>
+        </items>
+    </content>
+</jcr:root>
